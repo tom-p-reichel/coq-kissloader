@@ -1,0 +1,19 @@
+DECLARE PLUGIN "kissloader.plugin"
+
+{
+
+open Stdarg
+
+
+
+
+
+
+
+}
+
+
+VERNAC COMMAND EXTEND KISSLoader CLASSIFIED AS SIDEFF
+| ["Findlib" "Load" string(q)] ->
+	{Ce_api.load_findlib q}
+END

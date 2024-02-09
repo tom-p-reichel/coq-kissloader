@@ -1,0 +1,32 @@
+opam-version: "2.0"
+maintainer: "tom.p.reichel@gmail.com"
+
+dev-repo: "git+https://github.com/tom-p-reichel/coq-kissloader.git"
+bug-reports: "https://github.com/tom-p-reichel/coq-kissloader/issues"
+license: "MIT"
+
+synopsis: "load findlib packages in coq that don't have a dot in their name"
+description: """
+
+Require Import kissloader.Kiss.
+
+Findlib Load "whatever". """
+
+build: ["dune" "build" "-p" name "-j" jobs]
+depends: [
+  "ocaml" {>= "4.07.1"}
+  "dune" {>= "2.5"}
+  "coq" {>= "8.16" }
+  "cohttp-lwt-unix"
+]
+
+tags: [
+  "category:Miscellaneous/Coq Extensions"
+  "keyword:hacky workaround"
+  "logpath:MyPlugin"
+]
+
+authors: [
+  "Thomas Reichel"
+  "Another Optional Name"
+]

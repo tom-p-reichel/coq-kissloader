@@ -1,0 +1,25 @@
+(library
+ (name kissloader)              ; This is the name you will use in
+                                    ; Coq's `Declare ML Module`, and
+                                    ; the name of the main OCaml
+                                    ; module of your plugin.
+
+ (public_name kissloader.plugin) ; This makes the plugin
+                                    ; installable; recommended, must
+                                    ; match opam package name.
+
+ (synopsis "We Load here.")         ; Synopsis, used in META generation.
+
+ (flags :standard -rectypes -w -27 -verbose ) ; Coq requires the `-rectypes`
+                                    ; flag; CoqPP generated code
+                                    ; requires to disable warning 27
+                                    ; often.
+
+ (libraries                         ; OCaml Libraries we want to link
+                                    ; with, your choice here.
+   coq-core.vernac                  ; Needed for vernac extend.
+ )
+)
+
+; This will let Dune know about Coq's .mlg grammar files.
+(coq.pp (modules ce_syntax))

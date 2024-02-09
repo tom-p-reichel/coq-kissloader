@@ -1,0 +1,15 @@
+(coq.theory
+ (name kissloader)             ; This will determine the top-level Coq
+                                   ; module of your theory, modules will
+                                   ; be MyPlugin.A, etc., when seen from the
+                                   ; outside.
+
+ (package kissloader)           ; Adding this line will make your
+                                   ; library installable in the opam package
+
+ (plugins kissloader.plugin));cohttp-lwt-unix )) ; Here you should declare all
+                                   ; OCaml plugin dependencies
+                                   ; for your Coq files.
+
+; Other important fields are `modules` and `flags`, see Dune
+; documentation for more details.
